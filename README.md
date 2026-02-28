@@ -13,6 +13,8 @@ Lumenary was originally written for Raspberry Pi, but I wanted to get my Electri
 ![Status](https://img.shields.io/badge/status-beta-yellow)
 ![Date](https://img.shields.io/badge/date-Feb%202026-gray)
 
+**Download: https://lumenary.logiwrx.net/releases/eo1-lumenary-usb-v0.9.0.img.gz
+
 > **Beta Release** — EO1 support is fully tested but this is a beta release. If you encounter bugs, please [open an issue](https://github.com/RichN001/lumenary-eo1/issues) so we can track and fix them.
 
 > **EO2 Note:** Untested. May have different hardware. Use "Try Lumenary" from recovery USB to test without modifying your device.
