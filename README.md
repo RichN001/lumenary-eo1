@@ -9,13 +9,13 @@ Lumenary was originally written for Raspberry Pi, but I wanted to get my Electri
 > **Raspberry Pi version** — Not yet released, but [lumenary-pi](https://github.com/RichN001/lumenary-pi) has info and will house the Pi build when ready.
 
 ![Platform](https://img.shields.io/badge/platform-EO1-blue)
+![Version](https://img.shields.io/badge/version-0.9.5-blue)
 ![Status](https://img.shields.io/badge/status-beta-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-> **Beta Release** — EO1 support is fully tested but this is a beta release. If you encounter bugs, please [open an issue](https://github.com/RichN001/lumenary-eo1/issues) so we can track and fix them.
+> **v0.9.5 Release** — USB Creator now available for Windows and Mac. Download from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
 
 > **EO2 Note:** Untested. May have different hardware. Use "Try Lumenary" from recovery USB to test without modifying your device.
-
-![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Tech Stack
 
@@ -38,7 +38,7 @@ Lumenary is written in **C++** with the following stack:
 | Photo slideshow | ✅ | Smooth crossfade, slide, wipe, zoom transitions |
 | Video playback | ✅ | Hardware VPU decode, H.264/MP4 |
 | Animated GIFs | ✅ | Auto-converted to MP4 on upload |
-| USB Gallery | ✅ | Load photos/videos from USB drive (NEW) |
+| USB Gallery | ✅ | Load photos/videos from USB drive |
 | Ken Burns effect | ✅ | Subtle pan/zoom animation |
 | Web UI | ✅ | Upload, drag-drop reorder, configure settings |
 | Auto-brightness | ✅ | APDS9300 light sensor (if present on your unit) |
@@ -47,6 +47,7 @@ Lumenary is written in **C++** with the following stack:
 | Clock overlay | ✅ | FreeType 60fps native rendering |
 | WiFi setup | ✅ | Captive portal AP mode for easy configuration |
 | mDNS | ✅ | Access via `lumenary-XXXX.local` |
+| OTA updates | ✅ | Check for updates in Settings |
 | Tailscale VPN | ✅ | Optional secure remote access |
 | Cloud access | ✅ | Remote control via lumenary.logiwrx.net |
 
@@ -60,7 +61,6 @@ Lumenary is written in **C++** with the following stack:
 | Chromium widgets | ❌ | Too slow on i.MX6, uses native clock instead |
 | Motion sensor | ❌ | No PIR hardware on EO1 |
 | MQTT/Home Assistant | ⚠️ | Works but needs external broker configured |
-| Cap touch buttons | ⚠️ | Implemented but disabled (investigating CPU overhead) |
 
 ## Hardware
 
@@ -116,7 +116,7 @@ Or right-click the USB Creator → **Properties** → check **Unblock** (if show
 
 ## First Boot Setup
 
-After installation, the frame boots into **AP mode** and creates a WiFi network called `Lumenary_XXXX` (no password).
+After installation, the frame boots into **AP mode** and creates a WiFi network called `Lumenary_XXXX` (where XXXX is unique to your device).
 
 ### Connecting to Your Home WiFi
 
@@ -129,7 +129,7 @@ After installation, the frame boots into **AP mode** and creates a WiFi network 
 
 **If connection fails:** The frame's AP will restart — reconnect to `Lumenary_XXXX` and try again. Double-check your WiFi password.
 
-**If connection succeeds:** The IP address will briefly appear on the frame display. Access the web UI at http://[IP] or http://lumenary-eo1.local
+**If connection succeeds:** The IP address will briefly appear on the frame display. Access the web UI at http://[IP] or http://lumenary-XXXX.local
 
 **You can also use the frame in AP mode** without connecting to home WiFi — just stay connected to `Lumenary_XXXX` and use http://192.168.4.1 to upload photos and control the slideshow.
 
@@ -143,13 +143,14 @@ Access the web UI from any device on your network to:
 - **Set** night mode hours
 - **Customize** clock overlay appearance
 - **Connect** to cloud for remote access
+- **Check for updates** in Settings
 
 ### Save to Phone as App
 
 You can add the Lumenary web UI to your phone's home screen for quick access—it works like a native app:
 
 **iPhone (Safari):**
-1. Open the web UI in Safari (e.g. http://192.168.4.1 or http://lumenary-eo1.local)
+1. Open the web UI in Safari (e.g. http://192.168.4.1 or http://lumenary-XXXX.local)
 2. Tap the **Share** button (square with arrow)
 3. Scroll down and tap **Add to Home Screen**
 4. Edit the name if desired, then tap **Add**
@@ -195,7 +196,7 @@ ssh lumenary@192.168.x.x
 
 ### Web UI won't load
 - Try http://192.168.4.1 (in AP mode)
-- Try http://lumenary-eo1.local (after WiFi setup)
+- Try http://lumenary-XXXX.local (after WiFi setup)
 - Check IP address on frame display
 
 ### Video won't play
