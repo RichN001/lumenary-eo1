@@ -75,6 +75,10 @@ Lumenary is written in **C++** with the following stack:
 
 The **USB Creator** simplifies installation by building the installer for you. Download it from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
 
+<p align="center">
+  <img src="screenshots/usb-creator.png" alt="USB Creator" width="400">
+</p>
+
 ### Requirements
 - Electric Objects EO1 frame (EO2 untested)
 - USB drive (8GB or larger **required** — trial mode and master image are large; backups need the space)
