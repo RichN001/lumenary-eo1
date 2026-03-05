@@ -73,19 +73,21 @@ Lumenary is written in **C++** with the following stack:
 
 ## Installation
 
+The **USB Creator** simplifies installation by building the installer for you. Download it from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
+
 ### Requirements
 - Electric Objects EO1 frame (EO2 untested)
 - USB drive (8GB or larger **required** — trial mode and master image are large; backups need the space)
 - Micro-USB OTG adapter
-- Computer with [Etcher](https://etcher.balena.io/)
+- Computer to run the USB Creator
 
 ### Steps
 
-1. **Download** the latest recovery image from [Releases](https://github.com/RichN001/lumenary-eo1/releases)
+1. **Download** the USB Creator from [Releases](https://github.com/RichN001/lumenary-eo1/releases)
 
-2. **Flash** the image to USB drive using Etcher
+2. **Run** the USB Creator — it builds the installer and prepares your USB drive
 
-3. **Connect** USB drive to EO1 via micro-USB OTG adapter
+3. **Connect** the USB drive to your EO1 via micro-USB OTG adapter
 
 4. **Boot** the frame (both DIP switches OFF)
 
