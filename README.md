@@ -81,6 +81,15 @@ The **USB Creator** simplifies installation by building the installer for you. D
 - Micro-USB OTG adapter
 - Computer to run the USB Creator
 
+### Windows: Unsigned App
+
+The Mac app is code-signed; the Windows app is not. Windows may block it with SmartScreen or Defender. To run it:
+
+1. When you see "Windows protected your PC," click **More info**
+2. Click **Run anyway**
+
+Or right-click the USB Creator → **Properties** → check **Unblock** (if shown) → OK, then run it.
+
 ### Steps
 
 1. **Download** the USB Creator from [Releases](https://github.com/RichN001/lumenary-eo1/releases)
