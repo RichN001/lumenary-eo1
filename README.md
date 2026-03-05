@@ -94,29 +94,37 @@ The Mac app is code-signed; the Windows app is not. Windows may block it with Sm
 
 Or right-click the USB Creator → **Properties** → check **Unblock** (if shown) → OK, then run it.
 
-### Steps
+### Using the USB Creator
 
 1. **Download** the USB Creator from [Releases](https://github.com/RichN001/lumenary-eo1/releases)
 
-2. **Run** the USB Creator — it builds the installer and prepares your USB drive
+2. **Run** the USB Creator — it will automatically download the boot system image
 
-3. **Connect** the USB drive to your EO1 via micro-USB OTG adapter
+3. **Check** the **"Lumenary install image"** checkbox to download the installation image
 
-4. **Boot** the frame (both DIP switches OFF)
+4. **Wait** for the download to complete
 
-5. **Connect** your phone to the `LumenarySetup` WiFi network
+5. **Insert** your USB drive and click **Create USB**
 
-6. **Open** http://192.168.4.1 in your browser
+### Installing on the EO1
 
-7. **Choose** installation option:
+1. **Connect** the USB drive to your EO1 via micro-USB OTG adapter
+
+2. **Boot** the frame (both DIP switches OFF)
+
+3. **Connect** your phone to the `LumenarySetup` WiFi network
+
+4. **Open** http://192.168.4.1 in your browser
+
+5. **Choose** installation option:
    - **Try Lumenary** — Run from USB without modifying eMMC
    - **Backup + Install** — Save Android, then install Lumenary
    - **Install Only** — Erase and install (no backup)
    - **Backup Only** — Save Android to USB for safekeeping
 
-8. **Wait** ~10-15 minutes for installation to complete
+6. **Wait** ~10-15 minutes for installation to complete
 
-9. **Remove** USB and power cycle the frame
+7. **Remove** USB and power cycle the frame
 
 ## First Boot Setup
 
