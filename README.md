@@ -1,5 +1,5 @@
 # Lumenary for Electric Objects EO1
-screenshots/11-playing-light.png
+
 <p align="center">
   <img src="screenshots/01-playing-dark.png" alt="Lumenary Web UI" width="180">
   <img src="screenshots/03-gallery-dark.png" width="180">
