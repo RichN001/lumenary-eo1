@@ -1,10 +1,10 @@
 # Lumenary for Electric Objects EO1
 screenshots/11-playing-light.png
 <p align="center">
-  <img src="screenshots/01-playing-dark.png" alt="Lumenary Web UI" width="300">
-  <img src="screenshots/03-gallery-dark.png" width="300">
-  <img src="screenshots/06-display-dark.png" width="300">
-  <img src="screenshots/10-system-dark.png" width="300">
+  <img src="screenshots/01-playing-dark.png" alt="Lumenary Web UI" width="180">
+  <img src="screenshots/03-gallery-dark.png" width="180">
+  <img src="screenshots/06-display-dark.png" width="180">
+  <img src="screenshots/10-system-dark.png" width="180">
   
 </p>
 
