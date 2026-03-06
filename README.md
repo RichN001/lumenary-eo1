@@ -98,13 +98,15 @@ Or right-click the USB Creator → **Properties** → check **Unblock** (if show
 
 1. **Download** the USB Creator from [Releases](https://github.com/RichN001/lumenary-eo1/releases)
 
-2. **Run** the USB Creator — it will automatically download the boot system image
+2. **Run** the USB Creator and choose your mode:
+   - **Full Install USB** (~1.5 GB) — Backup, install, trial mode, and restore Android
+   - **Backup & Trial USB** (~500 MB) — Backup Android and try Lumenary without installing
 
-3. **Check** the **"Lumenary install image"** checkbox to download the installation image
+3. **Click** "Download & Continue" — the app downloads all required files automatically
 
-4. **Wait** for the download to complete
+4. **Insert** your USB drive and select it from the list
 
-5. **Insert** your USB drive and click **Create USB**
+5. **Click** "Create USB" and wait for it to complete
 
 ### Installing on the EO1
 
