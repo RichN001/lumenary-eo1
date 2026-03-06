@@ -1,7 +1,7 @@
 # Lumenary for Electric Objects EO1
 
 <p align="center">
-  <img src="01-playing-dark.png" alt="Lumenary Web UI" width="300">
+  <img src="screenshots/01-playing-dark.png" alt="Lumenary Web UI" width="300">
 </p>
 
 Lumenary was originally written for Raspberry Pi, but I wanted to get my Electric Objects EO1 frames back online. This EO1 port is an offshoot—I'm still developing the Pi version. Revive your EO1 with smooth transitions, video playback, and web-based controls.
