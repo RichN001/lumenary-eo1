@@ -17,7 +17,7 @@ Lumenary was originally written for Raspberry Pi, but I wanted to get my Electri
 ![Status](https://img.shields.io/badge/status-beta-yellow)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-> **v0.9.5 Release** — USB Creator now available for Windows and Mac. Download from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
+> **v0.9.5 Lumenary Released** — USB Creator v1.1.O now available for Windows and Mac. Download from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
 
 > **EO2 Note:** Untested. May have different hardware. Use "Try Lumenary" from recovery USB to test without modifying your device.
 
