@@ -122,11 +122,16 @@ Or right-click the USB Creator → **Properties** → check **Unblock** (if show
 
 4. **Open** http://192.168.4.1 in your browser
 
+<p align="center">
+  <img src="screenshots/recovery-menu.png" alt="Recovery Menu" width="300">
+</p>
+
 5. **Choose** installation option:
-   - **Try Lumenary** — Run from USB without modifying eMMC
-   - **Backup + Install** — Save Android, then install Lumenary
+   - **Save Artwork** — Extract your original Electric Objects cached artwork to USB (appears when Android is detected)
+   - **Full Backup Only** — Save entire eMMC to USB drive
+   - **Full Backup + Install** — Back up eMMC first, then install Lumenary
    - **Install Only** — Erase and install (no backup)
-   - **Backup Only** — Save Android to USB for safekeeping
+   - **Try Lumenary** — Run from USB without modifying eMMC
 
 6. **Wait** ~10-15 minutes for installation to complete
 
