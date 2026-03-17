@@ -13,11 +13,11 @@ Lumenary was originally written for Raspberry Pi, but I wanted to get my Electri
 > **Raspberry Pi version** — Not yet released, but [lumenary-pi](https://github.com/RichN001/lumenary-pi) has info and will house the Pi build when ready.
 
 ![Platform](https://img.shields.io/badge/platform-EO1-blue)
-![Version](https://img.shields.io/badge/version-0.9.5-blue)
+![Version](https://img.shields.io/badge/version-0.9.8-blue)
 ![Status](https://img.shields.io/badge/status-beta-yellow)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-> **v0.9.5 Lumenary Released** — USB Creator v1.1.O now available for Windows and Mac. Download from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
+> **v0.9.8 Lumenary Released** — USB Creator v1.1.O now available for Windows and Mac. Download from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
 
 > **EO2 Note:** Untested. May have different hardware. Use "Try Lumenary" from recovery USB to test without modifying your device.
 
