@@ -5,7 +5,7 @@
   <img src="screenshots/03-gallery-dark.png" width="180">
   <img src="screenshots/06-display-dark.png" width="180">
   <img src="screenshots/10-system-dark.png" width="180">
-  
+
 </p>
 
 Lumenary was originally written for Raspberry Pi, but I wanted to get my Electric Objects EO1 frames back online. This EO1 port is an offshoot—I'm still developing the Pi version. Revive your EO1 with smooth transitions, video playback, and web-based controls.
@@ -17,9 +17,9 @@ Lumenary was originally written for Raspberry Pi, but I wanted to get my Electri
 ![Status](https://img.shields.io/badge/status-beta-yellow)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-> **v0.9.8 Lumenary Released** — USB Creator v1.1.O now available for Windows and Mac. Download from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
+> **v0.9.8 Lumenary Released** — USB Creator v1.1.5 now available for Windows and Mac with LumenaryOS recovery (faster boot, WiFi pre-configuration). Download from [Releases](https://github.com/RichN001/lumenary-eo1/releases).
 
-> **EO2 Note:** Untested. May have different hardware. Use "Try Lumenary" from recovery USB to test without modifying your device.
+> **EO2 Note:** Untested. May have different hardware. Recovery USB allows backup before install.
 
 ## Tech Stack
 
@@ -43,7 +43,7 @@ Lumenary is written in **C++** with the following stack:
 | Video playback | ✅ | Hardware VPU decode, H.264/MP4 |
 | Animated GIFs | ✅ | Auto-converted to MP4 on upload |
 | USB Gallery | ✅ | Load photos/videos from USB drive |
-| Ken Burns effect | ✅ | Subtle pan/zoom animation |
+| Ken Burns effect | ✅ | Subtle pan |
 | Web UI | ✅ | Upload, drag-drop reorder, configure settings |
 | Auto-brightness | ✅ | APDS9300 light sensor (if present on your unit) |
 | Hardware brightness | ✅ | PWM backlight control (0-100%) |
@@ -64,7 +64,7 @@ Lumenary is written in **C++** with the following stack:
 | HTTPS/SSL | ❌ | OpenSSL 3.0+ required (EO1 has 1.1) |
 | Chromium widgets | ❌ | Too slow on i.MX6, uses native clock instead |
 | Motion sensor | ❌ | No PIR hardware on EO1 |
-| MQTT/Home Assistant | ⚠️ | Works but needs external broker configured |
+| MQTT/Home Assistant | ❌ | Requires external broker configured |
 
 ## Hardware
 
@@ -85,7 +85,7 @@ The **USB Creator** simplifies installation by building the installer for you. D
 
 ### Requirements
 - Electric Objects EO1 frame (EO2 untested)
-- USB drive (8GB or larger **required** — trial mode and master image are large; backups need the space)
+- USB drive (8GB or larger **required** — install image and backups need the space)
 - Micro-USB OTG adapter
 - Computer to run the USB Creator
 
@@ -103,14 +103,25 @@ Or right-click the USB Creator → **Properties** → check **Unblock** (if show
 1. **Download** the USB Creator from [Releases](https://github.com/RichN001/lumenary-eo1/releases)
 
 2. **Run** the USB Creator and choose your mode:
-   - **Full Install USB** (~1.5 GB) — Backup, install Lumenary, and trial mode
-   - **Backup & Trial USB** (~500 MB) — Backup Android and try Lumenary without installing
+   - **Full Install USB** (~1.5 GB) — Backup and install Lumenary
 
 3. **Click** "Download & Continue" — the app downloads all required files automatically
 
 4. **Insert** your USB drive and select it from the list
 
-5. **Click** "Create USB" and wait for it to complete
+5. **(Optional) Pre-configure WiFi** — Enter your WiFi SSID and password
+   - The recovery USB will automatically connect to your network on boot
+   - No need to use AP mode if WiFi is pre-configured
+
+6. **Click** "Create USB" and wait for it to complete
+
+### What's New in USB Creator v1.1.5
+
+- **LumenaryOS v1.0** — Custom Yocto-based recovery system with faster boot
+- **Immediate Boot Splash** — LumenaryOS logo appears within seconds of power-on
+- **WiFi Pre-Configuration** — Enter WiFi credentials in USB Creator, frame connects automatically
+- **Streamlined UI** — Removed trial mode for simplicity (backup + install workflow)
+- **Better Network Detection** — Faster ethernet check (2 seconds), improved DHCP handling
 
 ### Installing on the EO1
 
@@ -118,28 +129,45 @@ Or right-click the USB Creator → **Properties** → check **Unblock** (if show
 
 2. **Boot** the frame (both DIP switches OFF)
 
-3. **Connect** your phone to the `LumenarySetup` WiFi network
+3. **Wait** for the LumenaryOS v1.0 splash screen to appear
 
-4. **Open** http://192.168.4.1 in your browser
+4. **Connect** your phone to the network:
+   - If WiFi was pre-configured: Frame shows its IP address on the display
+   - If no WiFi configured: Connect to the `LumenarySetup` WiFi network
+
+5. **Open** http://192.168.4.1 (AP mode) or the displayed IP address in your browser
 
 <p align="center">
   <img src="screenshots/recovery-menu.png" alt="Recovery Menu" width="300">
 </p>
 
-5. **Choose** installation option:
+6. **Choose** installation option:
    - **Save Artwork** — Extract your original Electric Objects cached artwork to USB (appears when Android is detected)
    - **Full Backup Only** — Save entire eMMC to USB drive
    - **Full Backup + Install** — Back up eMMC first, then install Lumenary
    - **Install Only** — Erase and install (no backup)
-   - **Try Lumenary** — Run from USB without modifying eMMC
 
-6. **Wait** ~10-15 minutes for installation to complete
+7. **Wait** ~10-15 minutes for installation to complete
 
-7. **Remove** USB and power cycle the frame
+8. **Remove** USB and power cycle the frame
+
+### WiFi Pre-Configuration Details
+
+When you enter WiFi credentials in the USB Creator:
+
+1. Credentials are saved to `wifi-config.json` on the USB's data partition
+2. On boot, the recovery system reads this file and connects automatically
+3. The frame displays its IP address once connected
+4. After installation, the WiFi credentials are copied to the installed system
+5. The installed Lumenary connects to your WiFi on first boot (no AP mode needed)
+
+This eliminates the need to connect to the `LumenarySetup` AP and configure WiFi manually.
 
 ## First Boot Setup
 
 After installation, the frame boots into **AP mode** and creates a WiFi network called `Lumenary_XXXX` (where XXXX is unique to your device).
+
+> **Note:** If you pre-configured WiFi in the USB Creator, the frame will connect to your network automatically and skip AP mode.
 
 ### Connecting to Your Home WiFi
 
@@ -237,11 +265,31 @@ ssh lumenary@192.168.x.x
 If you created a backup during installation:
 
 1. Boot from USB recovery drive
-2. Connect to `LumenarySetup` WiFi
-3. Open http://192.168.4.1
+2. Connect to `LumenarySetup` WiFi (or use pre-configured WiFi)
+3. Open http://192.168.4.1 or the displayed IP
 4. Select "Restore" and choose your backup file
 5. Wait for restore to complete (~10 min)
 6. Remove USB and power cycle
+
+## Recovery USB Technical Details
+
+The recovery USB runs **LumenaryOS v1.0**, a custom Yocto-based Linux distribution optimized for EO1 recovery:
+
+| Feature | Details |
+|---------|---------|
+| Boot time | ~15 seconds to splash screen |
+| Base | Yocto Project (Dunfell) |
+| Kernel | Linux 5.4 (Boundary Devices) |
+| Init | systemd |
+| Shell | BusyBox |
+| Network | wpa_supplicant + udhcpc |
+
+### USB Partition Layout
+
+| Partition | Type | Size | Purpose |
+|-----------|------|------|---------|
+| 1 | ext4 | ~500MB | LumenaryOS boot system |
+| 2 | FAT32 | Remaining | Data: wifi-config.json, backups, artwork |
 
 ## License
 
